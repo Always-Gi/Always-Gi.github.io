@@ -66,6 +66,7 @@ img.profile {
   height: 170px !important;
   border-radius: 50% !important;
   object-fit: cover !important;
+  object-position: center !important;
   display: block !important;
   margin: 0 auto 28px !important;
 }
