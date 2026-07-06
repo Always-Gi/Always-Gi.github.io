@@ -459,3 +459,38 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+/* 데스크톱에서 소개 문구는 넓게, 링크 카드는 기존 폭 유지 */
+.container {
+  max-width: 650px;
+}
+
+.links {
+  width: 100%;
+  max-width: 490px;
+  margin-inline: auto;
+}
+
+h1 {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(48px, 7vw, 62px);
+  font-weight: 600;
+  letter-spacing: -4px;
+}
+
+.subtitle {
+  max-width: none;
+  white-space: nowrap;
+  font-size: 17px;
+  margin-bottom: 38px;
+}
+
+@media (max-width: 620px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .subtitle {
+    max-width: 360px;
+    white-space: normal;
+  }
+}
