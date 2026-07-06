@@ -7,130 +7,180 @@
 }
 
 body {
-  min-height: 100vh;
   font-family: 'Manrope', sans-serif;
+  min-height: 100vh;
   color: #0f172a;
   background:
-    radial-gradient(circle at 50% 0%, rgba(147, 197, 253, 0.42), transparent 34%),
-    radial-gradient(circle at 15% 20%, rgba(196, 181, 253, 0.22), transparent 28%),
-    radial-gradient(circle at 85% 75%, rgba(125, 211, 252, 0.18), transparent 30%),
+    radial-gradient(circle at 50% -10%, rgba(147, 197, 253, 0.50), transparent 34%),
+    radial-gradient(circle at 18% 18%, rgba(196, 181, 253, 0.22), transparent 28%),
+    radial-gradient(circle at 82% 70%, rgba(125, 211, 252, 0.18), transparent 30%),
     linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 38px 18px;
+  align-items: center;
+  padding: 34px 18px;
+  overflow-x: hidden;
+}
+
+.background-glow {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow-1 {
+  width: 360px;
+  height: 360px;
+  background: #bfdbfe;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.glow-2 {
+  width: 300px;
+  height: 300px;
+  background: #ddd6fe;
+  bottom: 8%;
+  right: 12%;
 }
 
 .container {
   width: 100%;
-  max-width: 480px;
+  max-width: 470px;
   text-align: center;
-  animation: fadeUp 0.7s ease both;
+  animation: fadeUp .7s ease both;
 }
 
 .profile {
-  width: 158px;
-  height: 158px;
+  width: 155px;
+  height: 155px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
   display: block;
   margin: 0 auto 26px;
-  border: 5px solid rgba(255, 255, 255, 0.95);
+  border: 5px solid rgba(255,255,255,.96);
   box-shadow:
-    0 22px 55px rgba(15, 23, 42, 0.18),
-    0 0 0 10px rgba(255, 255, 255, 0.55);
+    0 22px 55px rgba(15, 23, 42, .18),
+    0 0 0 9px rgba(255,255,255,.58);
 }
 
 h1 {
   font-size: clamp(42px, 8vw, 58px);
   font-weight: 800;
   letter-spacing: -2.6px;
-  line-height: 0.95;
-  margin-bottom: 16px;
+  line-height: 0.96;
+  margin-bottom: 15px;
 }
 
 .subtitle {
+  font-size: clamp(16px, 4vw, 19px);
   color: #64748b;
-  font-size: clamp(16px, 3.8vw, 19px);
   font-weight: 600;
   line-height: 1.55;
-  margin-bottom: 36px;
+  margin: 0 auto 36px;
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
 .link-card {
+  position: relative;
+  overflow: hidden;
   text-decoration: none;
   color: #0f172a;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(255, 255, 255, 0.92);
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(255,255,255,.90);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-radius: 24px;
   padding: 18px 20px;
-  display: grid;
-  grid-template-columns: 42px 1fr 24px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  text-align: left;
-  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.09);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  box-shadow: 0 15px 38px rgba(15, 23, 42, .085);
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
 }
 
 .link-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 26px 55px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, .14);
+  background: rgba(255,255,255,.88);
 }
 
 .link-card:active {
-  transform: scale(0.985);
+  transform: scale(.985);
 }
 
-.link-card i {
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.left i {
+  width: 31px;
   font-size: 24px;
   text-align: center;
+  transition: transform .2s ease;
 }
 
-.link-card span {
+.link-card:hover i {
+  transform: scale(1.08);
+}
+
+.left span {
   display: block;
   font-size: 18px;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.18;
 }
 
-.link-card small {
+.left small {
   display: block;
-  margin-top: 5px;
+  margin-top: 4px;
   color: #94a3b8;
   font-size: 13px;
   font-weight: 700;
 }
 
-.link-card b {
+.arrow {
   color: #cbd5e1;
   font-size: 22px;
-  opacity: 0;
+  font-weight: 800;
   transform: translateX(-5px);
-  transition: 0.22s ease;
+  opacity: 0;
+  transition: .22s ease;
 }
 
-.link-card:hover b {
+.link-card:hover .arrow {
   opacity: 1;
   transform: translateX(0);
 }
 
-.primary {
-  color: white;
+.research {
   background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
 }
 
-.primary small,
-.primary b {
+.research:hover {
+  background: linear-gradient(135deg, #111827, #263449);
+}
+
+.research small {
   color: #cbd5e1;
+}
+
+.research .arrow {
+  color: white;
 }
 
 .github i {
@@ -150,7 +200,7 @@ h1 {
 }
 
 footer {
-  margin-top: 32px;
+  margin-top: 31px;
   color: #94a3b8;
   font-size: 14px;
   font-weight: 600;
@@ -171,7 +221,11 @@ footer {
 @media (max-width: 480px) {
   body {
     align-items: flex-start;
-    padding: 42px 16px;
+    padding-top: 44px;
+  }
+
+  .container {
+    max-width: 100%;
   }
 
   .profile {
@@ -189,16 +243,19 @@ footer {
   }
 
   .link-card {
-    border-radius: 22px;
     padding: 17px 18px;
-    grid-template-columns: 38px 1fr 20px;
+    border-radius: 22px;
   }
 
-  .link-card span {
+  .left {
+    gap: 14px;
+  }
+
+  .left span {
     font-size: 17px;
   }
 
-  .link-card small {
+  .left small {
     font-size: 12.5px;
   }
 }
