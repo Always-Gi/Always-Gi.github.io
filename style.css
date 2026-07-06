@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Inter', sans-serif;
@@ -20,30 +16,17 @@ body {
   width: 430px;
   max-width: 90%;
   text-align: center;
-  animation: fadeUp .8s ease;
-}
-
-.profile {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid white;
-  box-shadow: 0 15px 40px rgba(0,0,0,.12);
-  margin-bottom: 28px;
 }
 
 h1 {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 10px;
-  letter-spacing: -1px;
 }
 
 .subtitle {
   color: #6b7280;
   font-size: 18px;
-  line-height: 1.6;
   margin-bottom: 40px;
 }
 
@@ -55,8 +38,6 @@ h1 {
 
 .links a {
   background: rgba(255,255,255,.7);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,.6);
   text-decoration: none;
   color: #111827;
   padding: 18px;
@@ -67,22 +48,7 @@ h1 {
   gap: 14px;
   font-size: 18px;
   font-weight: 600;
-  transition: .25s;
   box-shadow: 0 10px 25px rgba(0,0,0,.06);
-}
-
-.links a:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 35px rgba(0,0,0,.12);
-}
-
-.links a:active {
-  transform: scale(.98);
-}
-
-.links i {
-  width: 28px;
-  font-size: 24px;
 }
 
 .links .research {
@@ -90,23 +56,8 @@ h1 {
   color: white;
 }
 
-.links .research:hover {
-  background: #1f2937;
-}
-
 footer {
   margin-top: 35px;
   color: #9ca3af;
   font-size: 14px;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
