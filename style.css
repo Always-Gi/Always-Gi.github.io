@@ -61,3 +61,11 @@ footer {
   color: #9ca3af;
   font-size: 14px;
 }
+img.profile {
+  width: 170px !important;
+  height: 170px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 auto 28px !important;
+}
